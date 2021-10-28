@@ -1,0 +1,130 @@
+﻿@model BatDongSanProject.Models.Property
+
+@{
+    ViewBag.Title = "Chi tiết";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Chi tiết Bất động sản</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Mã Bất động sản
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Property_Code)
+        </dd>
+
+        <dt>
+            Tên Bất động sản
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Property_Name)
+        </dd>
+
+        <dt>
+            Mô tả
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            Địa chỉ
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            Diện tích
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Area)
+        </dd>
+
+        <dt>
+            Phòng ngủ
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bed_Room)
+        </dd>
+
+        <dt>
+            Phòng tắm
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bath_Room)
+        </dd>
+
+        <dt>
+            Giá
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            Tỷ lệ trả góp
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Installment_Rate)
+        </dd>
+
+        <dt>
+            Ảnh
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Avatar)
+        </dd>
+
+        <dt>
+            Album
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Album)
+        </dd>
+
+        <dt>
+            Địa chỉ
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.District.District_Name)
+        </dd>
+
+        <dt>
+            Trạng thái
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Property_Status.Property_Status_Name)
+        </dd>
+
+        <dt>
+            Loại bất động sản
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Property_Type.Property_Type_Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Sửa", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Trở về danh sách", "Index")
+</p>

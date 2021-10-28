@@ -1,0 +1,123 @@
+﻿@model IEnumerable<BatDongSanProject.Models.Property>
+
+@{
+    ViewBag.Title = "Danh sách Bất động sản";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Danh sách Bất động sản</h2>
+<body>
+    <p>
+        @Html.ActionLink("Thêm mới", "Create")
+    </p>
+    <div>
+        @using (Html.BeginForm())
+            {
+                <div class="text-center glyphicon-text-size">
+                    Tìm kiếm: @Html.TextBox("search","",new { @class = "glyphicon-text-background" })
+                    <input type="submit" value="Tìm kiếm" class="btn btn-default" />
+                </div>
+            }
+        </div>
+        <table class="table">
+            <tr>
+                <th>
+                    Mã Bất động sản
+                </th>
+                <th>
+                    Tên Bất động sản
+                </th>
+                <th>
+                    Mô tả
+                </th>
+                <th>
+                    Địa chỉ
+                </th>
+                <th>
+                    Diện tích
+                </th>
+                <th>
+                    Phòng ngủ
+                </th>
+                <th>
+                    Phòng tắm
+                </th>
+                <th>
+                    Giá
+                </th>
+                <th>
+                    Tỷ lệ trả góp
+                </th>
+                <th>
+                    Ảnh
+                </th>
+                <th>
+                    Album
+                </th>
+                <th>
+                    Tên quận
+                </th>
+                <th>
+                    Trạng thái
+                </th>
+                <th>
+                    Loại Bất động sản
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Property_Code)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Property_Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Address)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Area)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Bed_Room)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Bath_Room)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Installment_Rate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Avatar)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Album)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.District.District_Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Property_Status.Property_Status_Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Property_Type.Property_Type_Name)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Sửa", "Edit", new { id = item.ID }) |
+                        @Html.ActionLink("Chi tiết", "Details", new { id = item.ID }) |
+                        @Html.ActionLink("Xóa", "Delete", new { id = item.ID })
+                    </td>
+                </tr>
+            }
+
+        </table>
+</body>
